@@ -1,1 +1,1438 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse Complète : L'Affaire Jeffrey Epstein</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #0b1f2a;
+            --secondary-color: #0f2f3d;
+            --accent-color: #f97316;
+            --accent-soft: #ffd9b3;
+            --surface: #f7f7f2;
+            --ink: #0b1320;
+            --shadow: 0 20px 60px rgba(7, 12, 22, 0.25);
+        }
 
+        body {
+            font-family: 'Manrope', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--ink);
+            background: radial-gradient(1200px 600px at 10% 10%, rgba(249, 115, 22, 0.15), transparent 60%),
+                radial-gradient(900px 500px at 90% 15%, rgba(14, 116, 144, 0.2), transparent 55%),
+                linear-gradient(135deg, #0b1f2a 0%, #0b3a2f 100%);
+            min-height: 100vh;
+            padding: 28px 0 40px;
+        }
+
+        .container-main {
+            background: white;
+            border-radius: 26px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, rgba(11, 31, 42, 0.95) 0%, rgba(15, 47, 61, 0.98) 100%);
+            color: white;
+            padding: 56px 40px 52px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-section::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 20% 20%, rgba(249, 115, 22, 0.2), transparent 45%),
+                radial-gradient(circle at 80% 30%, rgba(14, 116, 144, 0.25), transparent 50%);
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .header-section h1 {
+            font-family: 'Playfair Display', 'Times New Roman', serif;
+            font-size: clamp(2rem, 2.4vw + 1.4rem, 3rem);
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: 0.3px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-section p {
+            font-size: 1.1rem;
+            opacity: 0.92;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-card {
+            margin: 34px;
+            padding: 34px;
+            border-radius: 18px;
+            background: var(--surface);
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(11, 31, 42, 0.08);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(11, 31, 42, 0.16);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-family: 'Playfair Display', 'Times New Roman', serif;
+            font-weight: 700;
+            margin-bottom: 22px;
+            font-size: clamp(1.5rem, 1.2vw + 1.2rem, 2.2rem);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .alert-custom {
+            border-radius: 12px;
+            border-left: 4px solid;
+            padding: 18px 22px;
+            margin: 20px 0;
+        }
+
+        .alert-danger-custom {
+            background-color: #fff5f5;
+            border-color: #dc3545;
+            color: #721c24;
+        }
+
+        .alert-warning-custom {
+            background-color: #fff9e6;
+            border-color: #ffc107;
+            color: #856404;
+        }
+
+        .alert-info-custom {
+            background-color: #e7f3ff;
+            border-color: #0d6efd;
+            color: #084298;
+        }
+
+        .alert-success-custom {
+            background-color: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+
+        .table-custom {
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(11, 31, 42, 0.12);
+        }
+
+        .table-custom thead {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+        }
+
+        .table-custom tbody tr:hover {
+            background-color: #f0f3f4;
+            transform: scale(1.01);
+            transition: all 0.2s ease;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #0f2f3d 0%, #115168 100%);
+            color: white;
+            padding: 26px;
+            border-radius: 18px;
+            text-align: center;
+            margin: 10px 0;
+            box-shadow: 0 10px 24px rgba(7, 12, 22, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 18px 36px rgba(7, 12, 22, 0.28);
+        }
+
+        .stat-number {
+            font-size: clamp(2.2rem, 1.6vw + 1.8rem, 3rem);
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .timeline-item {
+            padding: 20px 24px;
+            border-left: 3px solid var(--accent-color);
+            margin-left: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(11, 31, 42, 0.08);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 20px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent-color);
+        }
+
+        .carousel-item {
+            height: 420px;
+            background: linear-gradient(135deg, #0b1f2a 0%, #115168 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .carousel-content h2 {
+            font-family: 'Playfair Display', 'Times New Roman', serif;
+            font-size: clamp(2rem, 2.2vw + 1.4rem, 2.8rem);
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .carousel-content p {
+            font-size: 1.1rem;
+            max-width: 820px;
+            margin: 0 auto;
+            opacity: 0.92;
+        }
+
+        .badge-custom {
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 5px;
+        }
+
+        .nav-tabs-custom {
+            background: white;
+            gap: 6px;
+            padding: 10px 16px 0;
+            border-bottom: 1px solid rgba(11, 31, 42, 0.08);
+            overflow-x: auto;
+            scrollbar-width: thin;
+        }
+
+        .nav-tabs-custom .nav-link {
+            color: var(--primary-color);
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            padding: 14px 20px;
+            white-space: nowrap;
+        }
+
+        .nav-tabs-custom .nav-link.active {
+            color: var(--accent-color);
+            border-bottom-color: var(--accent-color);
+            background: transparent;
+        }
+
+        .emoji-large {
+            font-size: 2.5rem;
+        }
+
+        .progress-custom {
+            height: 30px;
+            border-radius: 15px;
+            background-color: #e9ecef;
+            margin: 10px 0;
+        }
+
+        .progress-bar-custom {
+            background: linear-gradient(90deg, #0f2f3d 0%, #f97316 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .footer-section {
+            background: var(--primary-color);
+            color: white;
+            padding: 36px 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 991px) {
+            .section-card {
+                margin: 24px;
+                padding: 26px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-section h1 {
+                font-size: 1.9rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .carousel-item {
+                height: 320px;
+            }
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent-color);
+            color: white;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 10px 24px rgba(7, 12, 22, 0.28);
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 1000;
+            border: none;
+            outline: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            transform: translateY(-4px);
+        }
+
+        .card-interactive {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 8px 20px rgba(11, 31, 42, 0.12);
+        }
+
+        .card-interactive:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(11, 31, 42, 0.2);
+        }
+
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(18px);
+        }
+
+        .reveal {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .section-card,
+            .stat-box,
+            .card-interactive,
+            .scroll-top {
+                transition: none;
+            }
+
+            [data-reveal] {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<button class="scroll-top" id="scrollTop" type="button" aria-label="Revenir en haut">
+    <i class="bi bi-arrow-up"></i>
+</button>
+
+<div class="container container-main">
+    
+    <!-- HEADER -->
+    <div class="header-section">
+        <h1>⚖️ Analyse Complète : L'Affaire Jeffrey Epstein</h1>
+        <p>Documentation exhaustive basée sur les sources officielles et documents déclassifiés</p>
+        <p><small>📅 Mis à jour : Février 2026</small></p>
+    </div>
+
+    <!-- SLIDESHOW -->
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="carousel-content">
+                    <h2>🚨 12,000-15,000 Victimes Estimées</h2>
+                    <p>Le chiffre officiel de 1,000+ victimes est probablement une sous-estimation massive basée sur l'analyse systémique du réseau criminel opérant pendant 20-30 ans.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-content">
+                    <h2>📂 3,5 Millions de Pages Déclassifiées</h2>
+                    <p>Les "Epstein Files" contiennent 180,000 images, emails, manifestes de vol, et témoignages sous serment révélant l'ampleur du système d'exploitation.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-content">
+                    <h2>🌍 Réseau International</h2>
+                    <p>Opérations documentées dans 8+ pays avec des connexions politiques, financières et judiciaires au plus haut niveau.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-content">
+                    <h2>⏳ 25-30 Ans Pour Justice Partielle</h2>
+                    <p>La justice totale est probablement impossible en raison de la protection systémique, de la mort des acteurs clés et des obstacles juridictionnels.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- STATISTIQUES CLÉS -->
+    <div class="section-card">
+        <h2 class="section-title"><span class="emoji-large">📊</span> Statistiques Clés</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="stat-box">
+                    <div class="stat-number">12-15K</div>
+                    <div class="stat-label">Victimes Estimées Réalistes</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-box">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Victimes Officielles FBI</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-box">
+                    <div class="stat-number">20-30</div>
+                    <div class="stat-label">Années d'Activité</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-box">
+                    <div class="stat-number">3.5M</div>
+                    <div class="stat-label">Pages Déclassifiées</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TABS NAVIGATION -->
+    <ul class="nav nav-tabs nav-tabs-custom" id="mainTabs" role="tablist">
+        <li class="nav-item">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#synthese">Synthèse Globale</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#victimes">Victimes</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#complices">Complices</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#documents">Documents</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#justice">Justice</button>
+        </li>
+    </ul>
+
+    <div class="tab-content p-4">
+        
+        <!-- SYNTHÈSE GLOBALE -->
+        <div class="tab-pane fade show active" id="synthese">
+            <div class="section-card">
+                <h2 class="section-title"><span class="emoji-large">🔍</span> Synthèse Globale du Système Epstein</h2>
+                
+                <div class="alert alert-danger-custom">
+                    <h5><i class="bi bi-exclamation-triangle-fill"></i> Système Criminel d'Ampleur Exceptionnelle</h5>
+                    <p>Jeffrey Epstein a dirigé pendant 20-30 ans un réseau d'exploitation sexuelle de mineures protégé par l'argent, le pouvoir politique et des connexions judiciaires au plus haut niveau.</p>
+                </div>
+
+                <h4 class="mt-4">📋 Méthode Opératoire</h4>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="card card-interactive mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="bi bi-people-fill"></i> Recrutement Ciblé</h5>
+                                <p>Jeunes filles de 14-17 ans issues de milieux défavorisés, recrutées sous prétexte de "massages" rémunérés (200-300$).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-interactive mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="bi bi-diagram-3-fill"></i> Système Pyramidal</h5>
+                                <p>Les victimes recrutaient d'autres jeunes filles en échange de rémunération, créant une croissance exponentielle du réseau.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-interactive mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="bi bi-geo-alt-fill"></i> Lieux Multiples</h5>
+                                <p>Palm Beach, Manhattan, Little Saint James (île), Paris, Nouveau-Mexique - permettant une exploitation continue.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-interactive mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="bi bi-shield-fill-exclamation"></i> Protection Judiciaire</h5>
+                                <p>Accord secret de 2008 avec immunité pour les complices, peine de 18 mois avec privilèges exceptionnels.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="mt-4">📍 Échelle Géographique</h4>
+                <table class="table table-custom table-striped mt-3">
+                    <thead>
+                        <tr>
+                            <th>Pays</th>
+                            <th>Lieux Documentés</th>
+                            <th>Type d'Activité</th>
+                            <th>Statut Investigation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🇺🇸 États-Unis</td>
+                            <td>Palm Beach, Manhattan, Nouveau-Mexique, Îles Vierges</td>
+                            <td>Exploitation principale</td>
+                            <td><span class="badge bg-success">Investigation complète</span></td>
+                        </tr>
+                        <tr>
+                            <td>🇫🇷 France</td>
+                            <td>Paris (plusieurs appartements)</td>
+                            <td>Réseau européen, recrutement mannequins</td>
+                            <td><span class="badge bg-warning">Investigation partielle</span></td>
+                        </tr>
+                        <tr>
+                            <td>🇬🇧 Royaume-Uni</td>
+                            <td>Londres</td>
+                            <td>Connexions royales (Prince Andrew)</td>
+                            <td><span class="badge bg-warning">Investigation limitée</span></td>
+                        </tr>
+                        <tr>
+                            <td>🇳🇴 Norvège</td>
+                            <td>Non précisé</td>
+                            <td>Personnalités impliquées</td>
+                            <td><span class="badge bg-danger">Pas d'investigation publique</span></td>
+                        </tr>
+                        <tr>
+                            <td>🌍 Europe de l'Est</td>
+                            <td>Multiple</td>
+                            <td>Recrutement mannequins</td>
+                            <td><span class="badge bg-danger">Aucune investigation</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section-card">
+                <h2 class="section-title"><span class="emoji-large">⏱️</span> Chronologie des Événements</h2>
+                
+                <div class="timeline-item">
+                    <strong>1990s-2000</strong><br>
+                    Début présumé des activités criminelles. Ghislaine Maxwell commence à recruter des victimes.
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>Mars 2005</strong><br>
+                    🚨 Police de Palm Beach alertée : jeune fille de 14 ans emmenée au manoir d'Epstein
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>2006</strong><br>
+                    📋 Enquête de 11 mois, perquisition du manoir. FBI identifie 36 victimes mineures.
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>2008</strong><br>
+                    ⚖️ Accord scandaleux : 18 mois de prison, immunité pour complices. Violation des droits des victimes.
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>Juillet 2019</strong><br>
+                    🚔 Arrestation pour trafic sexuel de mineures. Nouvelles accusations fédérales.
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>10 Août 2019</strong><br>
+                    ☠️ Mort d'Epstein en prison (suicide officiel, contesté)
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>Juin 2022</strong><br>
+                    ⚖️ Ghislaine Maxwell condamnée à 20 ans de prison pour complicité
+                </div>
+                
+                <div class="timeline-item">
+                    <strong>Janvier 2025</strong><br>
+                    📂 Publication des "Epstein Files" : 3,5 millions de pages déclassifiées
+                </div>
+            </div>
+        </div>
+
+        <!-- VICTIMES -->
+        <div class="tab-pane fade" id="victimes">
+            <div class="section-card">
+                <h2 class="section-title"><span class="emoji-large">👥</span> Analyse des Victimes</h2>
+                
+                <div class="alert alert-warning-custom">
+                    <h5><i class="bi bi-bar-chart-fill"></i> Écart Entre Chiffres Officiels et Estimation Réaliste</h5>
+                    <p><strong>Le chiffre officiel du FBI de 1,000+ victimes est probablement une sous-estimation massive de 10 à 15 fois.</strong></p>
+                </div>
+
+                <h4 class="mt-4">📊 Comparaison Chiffres Officiels vs Réalistes</h4>
+                <table class="table table-custom mt-3">
+                    <thead>
+                        <tr>
+                            <th>Catégorie</th>
+                            <th>Chiffre Officiel FBI</th>
+                            <th>Estimation Réaliste</th>
+                            <th>Écart</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>TOTAL VICTIMES</strong></td>
+                            <td><span class="badge bg-primary badge-custom">1,000+</span></td>
+                            <td><span class="badge bg-danger badge-custom">12,000-15,000</span></td>
+                            <td><span class="badge bg-warning badge-custom">×12-15</span></td>
+                        </tr>
+                        <tr>
+                            <td>Victimes avec preuves</td>
+                            <td>1,000+</td>
+                            <td>1,000-2,000</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Victimes sans preuves suffisantes</td>
+                            <td>Non comptées</td>
+                            <td>3,000-5,000</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Victimes n'ayant jamais témoigné</td>
+                            <td>Non comptées</td>
+                            <td>5,000-10,000</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Victimes internationales (hors US)</td>
+                            <td>Non comptées</td>
+                            <td>2,000-4,000</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4 class="mt-4">🧮 Calcul de l'Estimation Réaliste</h4>
+                
+                <div class="card mb-3">
+                    <div class="card-header bg-dark text-white">
+                        <strong>Méthode 1 : Par Lieux et Fréquence</strong>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>3 "massages" par semaine minimum par propriété</li>
+                            <li>52 semaines × 3 = <strong>156 victimes/an/lieu</strong></li>
+                            <li>Palm Beach (20 ans) : 3,120 victimes</li>
+                            <li>Manhattan (15 ans) : 2,340 victimes</li>
+                            <li>Île (10 ans) : 1,560 victimes</li>
+                            <li>Paris + autres (10 ans) : 1,560 victimes</li>
+                        </ul>
+                        <div class="alert alert-info-custom mt-2">
+                            <strong>Total Méthode 1 : 8,580 victimes</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-header bg-dark text-white">
+                        <strong>Méthode 2 : Système Pyramidal</strong>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>Année 1-5 : 200 victimes/an = 1,000</li>
+                            <li>Année 6-10 : 400 victimes/an = 2,000</li>
+                            <li>Année 11-15 : 600 victimes/an = 3,000</li>
+                            <li>Année 16-20 : 800 victimes/an = 4,000</li>
+                        </ul>
+                        <div class="alert alert-info-custom mt-2">
+                            <strong>Total Méthode 2 : 10,000+ victimes</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-header bg-dark text-white">
+                        <strong>Méthode 3 : Analyse des 180,000 Images</strong>
+                    </div>
+                    <div class="card-body">
+                        <p>180,000 images saisies dans les propriétés d'Epstein</p>
+                        <p>Si seulement 10% représentent des victimes différentes :</p>
+                        <div class="alert alert-info-custom mt-2">
+                            <strong>Total Méthode 3 : ~18,000 personnes photographiées</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="mt-4">❓ Pourquoi le Chiffre Officiel est Sous-Estimé</h4>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100 border-danger">
+                            <div class="card-body">
+                                <h5 class="card-title text-danger">🔇 Victimes Silencieuses</h5>
+                                <ul>
+                                    <li>Honte et stigmatisation</li>
+                                    <li>Peur de représailles</li>
+                                    <li>Victimes décédées</li>
+                                    <li>Immigrées sans papiers déportées</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100 border-warning">
+                            <div class="card-body">
+                                <h5 class="card-title text-warning">📋 Définition Restrictive FBI</h5>
+                                <ul>
+                                    <li>Seules victimes avec preuves documentaires</li>
+                                    <li>Standard fédéral de poursuites très élevé</li>
+                                    <li>Victimes "adultes" non comptées</li>
+                                    <li>Manipulation des âges</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100 border-info">
+                            <div class="card-body">
+                                <h5 class="card-title text-info">🌍 Victimes Internationales</h5>
+                                <ul>
+                                    <li>France : enquête séparée</li>
+                                    <li>UK : enquête limitée</li>
+                                    <li>Europe de l'Est : aucune enquête</li>
+                                    <li>Autres pays : non investigués</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card h-100 border-secondary">
+                            <div class="card-body">
+                                <h5 class="card-title text-secondary">🔥 Destruction de Preuves</h5>
+                                <ul>
+                                    <li>Mort d'Epstein</li>
+                                    <li>Caméras "défaillantes"</li>
+                                    <li>Disques durs détruits</li>
+                                    <li>Témoins décédés</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-success-custom mt-4">
+                    <h5><i class="bi bi-calculator-fill"></i> Conclusion sur le Nombre de Victimes</h5>
+                    <p><strong>Estimation la plus probable : 12,000-15,000 victimes</strong></p>
+                    <p>Cette estimation est cohérente avec :</p>
+                    <ul>
+                        <li>✅ La durée d'activité (20-30 ans)</li>
+                        <li>✅ Le nombre de propriétés (5+ lieux actifs)</li>
+                        <li>✅ Le système pyramidal de recrutement</li>
+                        <li>✅ Les 180,000 images saisies</li>
+                        <li>✅ Les témoignages de victimes (plusieurs visites/semaine)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- COMPLICES -->
+        <div class="tab-pane fade" id="complices">
+            <div class="section-card">
+                <h2 class="section-title"><span class="emoji-large">🤝</span> Réseau de Complices</h2>
+                
+                <h4>⚖️ Complices Condamnés</h4>
+                <table class="table table-custom table-hover mt-3">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Rôle</th>
+                            <th>Statut</th>
+                            <th>Peine</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-danger">
+                            <td><strong>Jeffrey Epstein</strong></td>
+                            <td>Principal auteur</td>
+                            <td>Décédé (2019)</td>
+                            <td>-</td>
+                        </tr>
+                        <tr class="table-warning">
+                            <td><strong>Ghislaine Maxwell</strong></td>
+                            <td>Recrutement, participation abus</td>
+                            <td>Condamnée</td>
+                            <td>20 ans prison</td>
+                        </tr>
+                        <tr class="table-secondary">
+                            <td><strong>Jean-Luc Brunel</strong></td>
+                            <td>Agent mannequins, rabatteur</td>
+                            <td>Décédé en prison (2022)</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Alfredo Rodriguez</strong></td>
+                            <td>Majordome</td>
+                            <td>Condamné (2010)</td>
+                            <td>18 mois</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4 class="mt-4">🔍 Personnalités Soupçonnées ou Mentionnées</h4>
+                
+                <div class="accordion" id="complicesAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#usa">
+                                🇺🇸 États-Unis
+                            </button>
+                        </h2>
+                        <div id="usa" class="accordion-collapse collapse show" data-bs-parent="#complicesAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>Donald Trump</strong> - Photos, emails, accusations contestées</li>
+                                    <li><strong>Bill Clinton</strong> - Voyages en jet privé documentés</li>
+                                    <li><strong>Prince Andrew</strong> - Règlement à l'amiable avec Virginia Giuffre</li>
+                                    <li><strong>Alan Dershowitz</strong> - Avocat d'Epstein, accusé puis blanchi</li>
+                                    <li><strong>Bill Gates</strong> - Reconnaît des rencontres/dîners</li>
+                                    <li><strong>Les Wexner</strong> - Employeur principal d'Epstein</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#france">
+                                🇫🇷 France
+                            </button>
+                        </h2>
+                        <div id="france" class="accordion-collapse collapse" data-bs-parent="#complicesAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>Jack Lang</strong> - 673 mentions dans documents, démissionné</li>
+                                    <li><strong>Caroline Lang</strong> - Fille de Jack Lang, mentionnée</li>
+                                    <li>Diplomate français non nommé publiquement</li>
+                                    <li>Omerta médiatique française dénoncée dans les commentaires</li>
+                                </ul>
+                                <div class="alert alert-warning-custom mt-2">
+                                    <small>Emmanuel Macron a déclaré "c'est un dossier américain" refusant l'investigation en France</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#autres">
+                                🌍 Autres Pays
+                            </button>
+                        </h2>
+                        <div id="autres" class="accordion-collapse collapse" data-bs-parent="#complicesAccordion">
+                            <div class="accordion-body">
+                                <strong>🇬🇧 Royaume-Uni :</strong>
+                                <ul>
+                                    <li>Peter Mandelson (démissionné)</li>
+                                    <li>George Mitchell</li>
+                                </ul>
+                                <strong>🇳🇴 Norvège :</strong>
+                                <ul>
+                                    <li>Thorbjørn Jagland</li>
+                                    <li>Børge Brende</li>
+                                    <li>Princesse Mette-Marit</li>
+                                    <li>Mona Juul (démissionnée)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="mt-4">📊 Estimation Totale du Réseau</h4>
+                <div class="row mt-3">
+                    <div class="col-md-3">
+                        <div class="card text-center border-danger">
+                            <div class="card-body">
+                                <h3 class="text-danger">5-10</h3>
+                                <p>Condamnés / Décédés</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-center border-warning">
+                            <div class="card-body">
+                                <h3 class="text-warning">50-100</h3>
+                                <p>Soupçonnés avec Preuves</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-center border-info">
+                            <div class="card-body">
+                                <h3 class="text-info">200-300+</h3>
+                                <p>Mentionnés Documents</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-center border-secondary">
+                            <div class="card-body">
+                                <h3 class="text-secondary">50+</h3>
+                                <p>Employés/Facilitateurs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-info-custom mt-4">
+                    <h5><i class="bi bi-info-circle-fill"></i> Note Importante du FBI</h5>
+                    <p>Le FBI n'a PAS trouvé de preuves qu'Epstein dirigeait un "réseau de trafic sexuel au service d'autres hommes puissants".</p>
+                    <p>Cependant, 4-5 victimes ont affirmé avoir été agressées par d'autres personnes, mais sans preuves suffisantes pour inculpations fédérales.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DOCUMENTS -->
+        <div class="tab-pane fade" id="documents">
+            <div class="section-card">
+                <h2 class="section-title"><span class="emoji-large">📂</span> Classification des Documents</h2>
+                
+                <h4>📊 Hiérarchie des Sources par Validité Juridique</h4>
+                
+                <div class="card mb-3 border-success">
+                    <div class="card-header bg-success text-white">
+                        <strong>NIVEAU 1 - Documents Judiciaires Officiels (Recevables en Justice)</strong>
+                    </div>
+                    <div class="card-body">
+                        <h6>A. Documents d'accusation et condamnation</h6>
+                        <ul>
+                            <li>✅ Actes d'accusation fédéraux (2019, 2008)</li>
+                            <li>✅ Jugement de condamnation Ghislaine Maxwell (2022)</li>
+                            <li>✅ Sentences et verdicts</li>
+                        </ul>
+                        
+                        <h6 class="mt-3">B. "Epstein Files" - 3,5 millions de pages (2025)</h6>
+                        <ul>
+                            <li>✅ Documents judiciaires déscellés par décision de justice</li>
+                            <li>✅ Témoignages sous serment</li>
+                            <li>✅ Dépositions</li>
+                            <li>✅ Correspondances saisies (emails, messages)</li>
+                            <li>✅ 180,000 images cataloguées</li>
+                            <li>✅ Vidéos d'investigation</li>
+                            <li>✅ Preuves matérielles documentées</li>
+                        </ul>
+                        
+                        <h6 class="mt-3">C. Rapports d'enquête policière</h6>
+                        <ul>
+                            <li>✅ Rapports de police Palm Beach (2005-2006)</li>
+                            <li>✅ Documents de perquisition</li>
+                            <li>✅ Procès-verbaux</li>
+                        </ul>
+                        
+                        <div class="progress progress-custom mt-3">
+                            <div class="progress-bar progress-bar-custom" style="width: 100%">Validité Juridique: 100%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3 border-primary">
+                    <div class="card-header bg-primary text-white">
+                        <strong>NIVEAU 2 - Archives FBI Déclassifiées</strong>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>📋 Dossiers obtenus via FOIA (Freedom of Information Act)</li>
+                            <li>📋 Rapports d'enquête fédérale</li>
+                            <li>📋 Documents d'investigation (caviardés pour sécurité)</li>
+                            <li>📋 Chronologies détaillées FBI</li>
+                            <li>📋 Présentation 21 pages résumé FBI</li>
+                        </ul>
+                        <div class="progress progress-custom mt-3">
+                            <div class="progress-bar progress-bar-custom" style="width: 95%">Validité Juridique: 95%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3 border-info">
+                    <div class="card-header bg-info text-white">
+                        <strong>NIVEAU 3 - Documents Judiciaires Civils</strong>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li>📄 Plaintes civiles des victimes</li>
+                            <li>📄 Dépositions dans procès civils</li>
+                            <li>📄 Correspondances saisies</li>
+                            <li>📄 Registres de vol ("Lolita Express")</li>
+                            <li>📄 Documents financiers</li>
+                        </ul>
+                        <div class="progress progress-custom mt-3">
+                            <div class="progress-bar progress-bar-custom" style="width: 85%">Validité Juridique: 85%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="mt-4">📋 Contenu des "Epstein Files"</h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card card-interactive text-center mb-3">
+                            <div class="card-body">
+                                <div class="emoji-large">📸</div>
+                                <h4 class="mt-2">180,000</h4>
+                                <p>Images Cataloguées</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-interactive text-center mb-3">
+                            <div class="card-body">
+                                <div class="emoji-large">📧</div>
+                                <h4 class="mt-2">Milliers</h4>
+                                <p>Emails et Messages</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-interactive text-center mb-3">
+                            <div class="card-body">
+                                <div class="emoji-large">✈️</div>
+                                <h4 class="mt-2">Complets</h4>
+                                <p>Manifestes de Vol</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-interactive text-center mb-3">
+                            <div class="card-body">
+                                <div class="emoji-large">💰</div>
+                                <h4 class="mt-2">Détaillés</h4>
+                                <p>Registres Financiers</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-interactive text-center mb-3">
+                            <div class="card-body">
+                                <div class="emoji-large">📹</div>
+                                <h4 class="mt-2">Multiple</h4>
+                                <p>Vidéos d'Investigation</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-interactive text-center mb-3">
+                            <div class="card-body">
+                                <div class="emoji-large">⚖️</div>
+                                <h4 class="mt-2">Sous Serment</h4>
+                                <p>Témoignages</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="mt-4">⚠️ Limites des Documents Déclassifiés</h4>
+                <div class="alert alert-warning-custom">
+                    <h5><i class="bi bi-exclamation-triangle-fill"></i> Redactions Massives</h5>
+                    <ul>
+                        <li>De nombreux noms caviardés (noircis)</li>
+                        <li>Images sensibles retirées (torture, décès, abus)</li>
+                        <li>Organisation inégale du référentiel</li>
+                        <li>Scepticisme sur matériel potentiellement retenu</li>
+                        <li>Nombreux conseils non corroborés ou sans provenance</li>
+                    </ul>
+                </div>
+
+                <h4 class="mt-4">🔐 Accès aux Documents</h4>
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="bi bi-globe"></i> Consultation Publique</h5>
+                        <p>Les documents sont consultables depuis la France sur le site du ministère de la Justice américain après confirmation d'être âgé de plus de 18 ans.</p>
+                        <p><strong>⚠️ Avertissement :</strong> Contenu extrêmement perturbant et traumatisant.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JUSTICE -->
+        <div class="tab-pane fade" id="justice">
+            <div class="section-card">
+                <h2 class="section-title"><span class="emoji-large">⚖️</span> Parcours vers la Justice</h2>
+                
+                <div class="alert alert-danger-custom">
+                    <h5><i class="bi bi-exclamation-octagon-fill"></i> Conclusion Principale</h5>
+                    <p><strong>La justice totale est probablement IMPOSSIBLE</strong></p>
+                    <p>Estimation réaliste : Seulement 5-10% des criminels seront poursuivis et 20-30% des victimes identifiées.</p>
+                </div>
+
+                <h4>⏱️ Temps Estimé pour Justice Partielle</h4>
+                
+                <table class="table table-custom mt-3">
+                    <thead>
+                        <tr>
+                            <th>Scénario</th>
+                            <th>Durée Totale</th>
+                            <th>Résultat Attendu</th>
+                            <th>Probabilité</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-success">
+                            <td>✅ Optimiste</td>
+                            <td>15-20 ans (2040-2045)</td>
+                            <td>Tous moyens déployés, justice partielle significative</td>
+                            <td><span class="badge bg-success">5%</span></td>
+                        </tr>
+                        <tr class="table-warning">
+                            <td>⚠️ Réaliste</td>
+                            <td>25-30 ans (2045-2055)</td>
+                            <td>Quelques complices condamnés, budget insuffisant</td>
+                            <td><span class="badge bg-warning">30%</span></td>
+                        </tr>
+                        <tr class="table-danger">
+                            <td>❌ Pessimiste</td>
+                            <td>JAMAIS</td>
+                            <td>Justice totale impossible, omerta persistante</td>
+                            <td><span class="badge bg-danger">65%</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4 class="mt-4">🔍 Méthodes pour Prouver le Chiffre Réaliste</h4>
+                
+                <div class="accordion" id="methodsAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#forensic">
+                                🔬 Analyse Forensique des 180,000 Images
+                            </button>
+                        </h2>
+                        <div id="forensic" class="accordion-collapse collapse show" data-bs-parent="#methodsAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Identification de chaque personne unique</li>
+                                    <li>Reconnaissance faciale (si visages visibles)</li>
+                                    <li>Analyse métadonnées (dates, lieux, appareils)</li>
+                                </ul>
+                                <strong>⏱️ Temps estimé :</strong> 2-3 ans<br>
+                                <strong>💰 Coût :</strong> 10-20 millions $<br>
+                                <strong>❌ Obstacle :</strong> Budget non alloué
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flights">
+                                ✈️ Exploitation Registres de Vol
+                            </button>
+                        </h2>
+                        <div id="flights" class="accordion-collapse collapse" data-bs-parent="#methodsAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Manifestes du "Lolita Express" (1998-2019)</li>
+                                    <li>Autres jets/hélicoptères privés</li>
+                                    <li>Croisement avec registres immigration</li>
+                                </ul>
+                                <strong>⏱️ Temps estimé :</strong> 1-2 ans<br>
+                                <strong>❌ Obstacle :</strong> Coopération internationale nécessaire
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#financial">
+                                💰 Analyse Transactions Financières
+                            </button>
+                        </h2>
+                        <div id="financial" class="accordion-collapse collapse" data-bs-parent="#methodsAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Tous paiements en espèces documentés</li>
+                                    <li>Virements bancaires suspects</li>
+                                    <li>Paiements aux "masseuses"</li>
+                                </ul>
+                                <strong>⏱️ Temps estimé :</strong> 2-3 ans<br>
+                                <strong>💰 Coût :</strong> 20-30 millions $<br>
+                                <strong>❌ Obstacle :</strong> Secret bancaire, juridictions offshore
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#witnesses">
+                                🗣️ Campagne Témoignages Systématiques
+                            </button>
+                        </h2>
+                        <div id="witnesses" class="accordion-collapse collapse" data-bs-parent="#methodsAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Campagne internationale d'appel à témoins</li>
+                                    <li>Protection des témoins garantie</li>
+                                    <li>Immunité pour ancien(ne)s complices</li>
+                                    <li>Hotline sécurisée multilingue</li>
+                                </ul>
+                                <strong>⏱️ Temps estimé :</strong> 3-5 ans<br>
+                                <strong>💰 Coût :</strong> 50-100 millions $ (protection, support psychologique)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="mt-4">🚧 Obstacles Majeurs à la Justice Totale</h4>
+                
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="card border-danger mb-3">
+                            <div class="card-header bg-danger text-white">
+                                <strong>🔒 Protection des Puissants</strong>
+                            </div>
+                            <div class="card-body">
+                                <ul class="mb-0">
+                                    <li>Immunité de 2008 pour complices</li>
+                                    <li>Pressions politiques massives</li>
+                                    <li>Secrets d'État invoqués</li>
+                                    <li>Avocats ultra-puissants</li>
+                                    <li>Immunités diplomatiques</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="card border-warning mb-3">
+                            <div class="card-header bg-warning text-dark">
+                                <strong>⏳ Temps qui Passe</strong>
+                            </div>
+                            <div class="card-body">
+                                <ul class="mb-0">
+                                    <li>Epstein mort (2019)</li>
+                                    <li>Brunel mort (2022)</li>
+                                    <li>Virginia Giuffre morte (2025)</li>
+                                    <li>Prescription délais variables</li>
+                                    <li>Témoins/preuves disparaissent</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="card border-info mb-3">
+                            <div class="card-header bg-info text-white">
+                                <strong>🌍 Complexité Internationale</strong>
+                            </div>
+                            <div class="card-body">
+                                <ul class="mb-0">
+                                    <li>Juridictions non alignées</li>
+                                    <li>Lois différentes par pays</li>
+                                    <li>Extraditions impossibles</li>
+                                    <li>Paradis fiscaux non coopératifs</li>
+                                    <li>Souveraineté nationale</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="card border-secondary mb-3">
+                            <div class="card-header bg-secondary text-white">
+                                <strong>💸 Coût Prohibitif</strong>
+                            </div>
+                            <div class="card-body">
+                                <ul class="mb-0">
+                                    <li>Investigation complète: 500M-1B $</li>
+                                    <li>Protection témoins: 100M+ $</li>
+                                    <li>Aucun gouvernement ne financera</li>
+                                    <li>Volonté politique absente</li>
+                                    <li>Élites impliquées bloquent</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="mt-4">✅ Ce qui est Possible vs ❌ Impossible</h4>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card border-success h-100">
+                            <div class="card-header bg-success text-white">
+                                <strong>✅ POSSIBLE (En cours ou réalisable)</strong>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>✅ Condamnations de 2-3 complices directs supplémentaires</li>
+                                    <li>✅ Compensations financières pour victimes identifiées</li>
+                                    <li>✅ Révélations documentaires progressives</li>
+                                    <li>✅ Enquêtes médiatiques continues</li>
+                                    <li>✅ Support psychologique aux victimes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="card border-danger h-100">
+                            <div class="card-header bg-danger text-white">
+                                <strong>❌ IMPOSSIBLE (Obstacles insurmontables)</strong>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li>❌ Poursuites des clients/puissants protégés</li>
+                                    <li>❌ Identification de TOUTES les victimes</li>
+                                    <li>❌ Justice totale avec tous coupables condamnés</li>
+                                    <li>❌ Levée de toutes les immunités</li>
+                                    <li>❌ Commission d'enquête internationale indépendante</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="alert alert-info-custom mt-4">
+                    <h5><i class="bi bi-lightbulb-fill"></i> Conclusion sur la Justice</h5>
+                    <p><strong>L'affaire Epstein restera probablement l'un des plus grands scandales partiellement étouffés de l'histoire moderne.</strong></p>
+                    <p>Seulement 5-10% des criminels seront poursuivis et 20-30% des victimes identifiées, en raison de :</p>
+                    <ul>
+                        <li>La mort des acteurs principaux</li>
+                        <li>La protection systémique des élites</li>
+                        <li>L'absence de volonté politique</li>
+                        <li>Le coût astronomique d'une vraie investigation</li>
+                        <li>La complexité des juridictions internationales</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer-section">
+        <h5>⚖️ Pour la Vérité et la Justice</h5>
+        <p>Cette analyse est basée sur des documents officiels, témoignages judiciaires et sources vérifiables.</p>
+        <p><small>Les victimes méritent justice. Le silence est complicité.</small></p>
+        <p class="mt-3">
+            <span class="badge bg-light text-dark me-2">📂 Sources: Documents FBI</span>
+            <span class="badge bg-light text-dark me-2">⚖️ Epstein Files</span>
+            <span class="badge bg-light text-dark">📰 Médias Vérifiés</span>
+        </p>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Scroll to top button
+    const scrollTop = document.getElementById('scrollTop');
+    
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollTop.classList.add('visible');
+        } else {
+            scrollTop.classList.remove('visible');
+        }
+    });
+    
+    scrollTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Auto-rotate carousel
+    const carousel = new bootstrap.Carousel(document.getElementById('mainCarousel'), {
+        interval: 5000,
+        wrap: true
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Add animation on scroll
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const revealTargets = document.querySelectorAll('.section-card, .stat-box');
+
+    if (prefersReducedMotion) {
+        revealTargets.forEach(el => el.classList.add('reveal'));
+    } else {
+        const observerOptions = {
+            threshold: 0.12,
+            rootMargin: '0px 0px -60px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        revealTargets.forEach(el => {
+            el.setAttribute('data-reveal', '');
+            observer.observe(el);
+        });
+    }
+</script>
+
+</body>
+</html>
